@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prototype</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/themes.css">
     <script type="module" src="scripts/scripts.js"></script>
 </head>
 <body>
@@ -12,18 +13,18 @@
         <section class="working-area" aria-label="Working prototype">
             <figure class="phone-example">
                 <div class="phone-frame">
-                    <div class="phone-screen" id="prototype">
+                    <div class="phone-screen theme-white" id="prototype">
                         <header class="app-header">
                             <div class="app-wordmark">PREVIARA</div>
-                            <button class="menu-button" type="button" aria-label="Open menu">
-                                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                            <button class="menu-button" type="button" aria-label="Open settings">
+                                <i class="fa-solid fa-gear" aria-hidden="true"></i>
+                                <span class="menu-label">Settings</span>
                             </button>
                         </header>
                         <div class="app-content">
                             <section class="profile-name">
-                                <p class="profile-welcome smaller-normal">Measurements for</p>
                                 <h3 class="profile-name-heading">Jane DorthyExample</h3>
-                                <time class="prototype-date" datetime="2026-05-08">May 8, 2026</time>
+                                <time class="prototype-date" datetime="2026-05-08">Today is <strong>May 8, 2026</strong></time>
                             </section>
                             <div class="view-actions" role="group" aria-label="Measurement display options">
                                 <button class="view-action is-active" type="button" data-view="table" aria-pressed="true">Table</button>
@@ -213,6 +214,11 @@
                 </div>
                 <figcaption>
                     <span>Working prototype</span>
+                    <div class="prototype-style-options" role="group" aria-label="Working prototype color style">
+                        <button class="prototype-style-option is-active" type="button" data-theme="white" aria-pressed="true">White</button>
+                        <button class="prototype-style-option" type="button" data-theme="blue" aria-pressed="false">Blue</button>
+                        <button class="prototype-style-option" type="button" data-theme="creme" aria-pressed="false">Styled</button>
+                    </div>
                     <small>320 × 640 px</small>
                 </figcaption>
             </figure>
@@ -224,13 +230,15 @@
                     <div class="phone-screen" data-prototype="no-recent">
                         <header class="app-header">
                             <div class="app-wordmark">PREVIARA</div>
-                            <span class="menu-button" aria-hidden="true"><i class="fa-solid fa-bars"></i></span>
+                            <span class="menu-button" aria-hidden="true">
+                                <i class="fa-solid fa-gear"></i>
+                                <span class="menu-label">Settings</span>
+                            </span>
                         </header>
                         <div class="app-content">
                             <section class="profile-name">
-                                <p class="profile-welcome smaller-normal">Welcome</p>
                                 <h3 class="profile-name-heading">Jane DorthyExample</h3>
-                                <time class="prototype-date" datetime="2026-05-08">May 8, 2026</time>
+                                <time class="prototype-date" datetime="2026-05-08">Today is <strong>May 8, 2026</strong></time>
                             </section>
                             <div class="view-actions" role="group" aria-label="Measurement display options">
                                 <button class="view-action is-active" type="button" data-view="table" aria-pressed="true">Table</button>
@@ -275,13 +283,15 @@
                     <div class="phone-screen" data-prototype="extensive">
                         <header class="app-header">
                             <div class="app-wordmark">PREVIARA</div>
-                            <span class="menu-button" aria-hidden="true"><i class="fa-solid fa-bars"></i></span>
+                            <span class="menu-button" aria-hidden="true">
+                                <i class="fa-solid fa-gear"></i>
+                                <span class="menu-label">Settings</span>
+                            </span>
                         </header>
                         <div class="app-content">
                             <section class="profile-name">
-                                <p class="profile-welcome smaller-normal">Welcome</p>
                                 <h3 class="profile-name-heading">Jane DorthyExample -- Extra long name for testing purposes</h3>
-                                <time class="prototype-date" datetime="2026-05-08">May 8, 2026</time>
+                                <time class="prototype-date" datetime="2026-05-08">Today is <strong>May 8, 2026</strong></time>
                             </section>
                             <div class="view-actions" role="group" aria-label="Measurement display options">
                                 <button class="view-action is-active" type="button" data-view="table" aria-pressed="true">Table</button>
@@ -295,7 +305,7 @@
                             <p class="aggregation-note" aria-live="polite" hidden></p>
                             <section class="measurement-section">
                                 <h2 class="section-label">Latest Weight</h2>
-                                <p class="measurement-recency normal-text"><strong>1</strong> <span class="smaller-normal">minute ago</span></p>
+                                <p class="measurement-recency normal-text"><strong>1</strong> <span class="smaller-normal">min ago</span></p>
                                 <div class="measurement-table-rows" data-measurement-table="weight"><div class="measurement-details">
                                     <div class="measurement-detail"><time class="measurement-date" datetime="2026-05-09"><span class="normal-text">May</span><span class="measurement-primary">9</span></time></div>
                                     <div class="measurement-detail"><time class="measurement-time normal-text" datetime="2026-05-09T16:25">4:25&nbsp;PM</time></div>
@@ -305,7 +315,7 @@
                             </section>
                             <section class="measurement-section">
                                 <h2 class="section-label">Latest Blood Pressure</h2>
-                                <p class="measurement-recency normal-text"><strong>55</strong> <span class="smaller-normal">minutes ago</span></p>
+                                <p class="measurement-recency normal-text"><strong>55</strong> <span class="smaller-normal">min ago</span></p>
                                 <div class="measurement-table-rows" data-measurement-table="blood-pressure"><div class="measurement-details">
                                     <div class="measurement-detail"><time class="measurement-date" datetime="2026-05-09"><span class="normal-text">May</span><span class="measurement-primary">9</span></time></div>
                                     <div class="measurement-detail"><time class="measurement-time normal-text" datetime="2026-05-09T16:25">4:25&nbsp;PM</time></div>
@@ -548,14 +558,6 @@
                             <span>Gear</span>
                             <code>fa-solid fa-gear</code>
                             <a href="https://fontawesome.com/icons/classic/solid/gear" target="_blank" rel="noopener noreferrer">link</a>
-                        </figcaption>
-                    </figure>
-                    <figure class="icon-option">
-                        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-                        <figcaption>
-                            <span>Bars</span>
-                            <code>fa-solid fa-bars</code>
-                            <a href="https://fontawesome.com/icons/classic/solid/bars" target="_blank" rel="noopener noreferrer">link</a>
                         </figcaption>
                     </figure>
                     <figure class="icon-option">

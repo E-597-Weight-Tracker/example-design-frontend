@@ -916,3 +916,32 @@ const setupPopulatedPrototype = (root, sources) => {
 
 document.querySelectorAll('[data-prototype="extensive"]')
     .forEach((root) => setupPopulatedPrototype(root, populatedProfiles[root.dataset.prototype]));
+
+const workingPrototype = document.querySelector("#prototype");
+const themeActions = document.querySelectorAll(".prototype-style-option[data-theme]");
+
+themeActions.forEach((action) => {
+    action.addEventListener("click", () => {
+        workingPrototype.classList.remove("theme-white", "theme-blue", "theme-creme");
+        workingPrototype.classList.add(`theme-${action.dataset.theme}`);
+
+        themeActions.forEach((candidate) => {
+            const isActive = candidate === action;
+            candidate.classList.toggle("is-active", isActive);
+            candidate.setAttribute("aria-pressed", String(isActive));
+        });
+
+        const activeTheme = getComputedStyle(workingPrototype);
+        Object.keys(colors).forEach((name) => {
+            colors[name] = activeTheme.getPropertyValue(`--${name}`).trim();
+        });
+
+        workingPrototype.querySelectorAll("canvas").forEach((canvas) => {
+            const chart = Chart.getChart(canvas);
+            if (!chart) return;
+            const weightDataset = chart.data.datasets.find(({ label }) => label === "Weight");
+            if (weightDataset) weightDataset.pointBackgroundColor = colors["app-background"];
+            chart.update("none");
+        });
+    });
+});

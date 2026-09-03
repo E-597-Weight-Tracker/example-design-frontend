@@ -1,0 +1,49 @@
+:root {
+    --app-background: rgb(255 255 255);
+    --header-background: rgb(255 255 255);
+    --row-alternate: rgb(245 245 245);
+    --text-primary: rgb(20 20 20);
+    --text-heading-1: rgb(120 120 120);
+    --text-heading-2: rgb(100 100 100);
+    --text-heading-3: rgb(80 80 80);
+    --text-heading-4: rgb(60 60 60);
+    --text-secondary: rgb(98 106 115);
+    --link: rgb(40 95 145);
+    --divider: rgb(0 0 0 / 18%);
+    --heart: rgb(230 64 94);
+    --icon: rgb(32 36 42);
+    --chart-weight: rgb(30 74 130);
+    --chart-systolic: rgb(230 0 0);
+    --chart-diastolic: rgb(45 100 230);
+    --chart-grid: rgb(0 0 0 / 12%);
+}
+
+.theme-blue {
+    --app-background: rgb(246 250 253);
+    --header-background: rgb(226 240 249);
+    --row-alternate: rgb(255 255 255);
+    --text-primary: rgb(27 39 49);
+    --text-heading-1: rgb(94 145 180);
+    --text-heading-2: rgb(72 125 163);
+    --text-heading-3: rgb(51 105 145);
+    --text-heading-4: rgb(35 83 120);
+    --text-secondary: rgb(75 99 117);
+    --link: rgb(24 101 157);
+    --divider: rgb(51 105 145 / 22%);
+    --icon: rgb(32 84 122);
+}
+
+.theme-creme {
+    --app-background: rgb(255 255 255);
+    --header-background: rgb(245 235 214);
+    --row-alternate: rgb(255 255 255);
+    --text-primary: rgb(42 39 33);
+    --text-heading-1: rgb(151 133 99);
+    --text-heading-2: rgb(125 102 67);
+    --text-heading-3: rgb(101 78 47);
+    --text-heading-4: rgb(77 58 37);
+    --text-secondary: rgb(104 94 77);
+    --link: rgb(120 83 36);
+    --divider: rgb(112 89 54 / 22%);
+    --icon: rgb(92 65 34);
+}
