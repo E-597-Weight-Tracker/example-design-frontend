@@ -3,9 +3,7 @@
 :root {
     --page-background: #eef0f3;
     --phone-frame: #17191c;
-    --phone-screen: #ffffff;
     --app-background: rgb(255 255 255);
-    --surface: rgb(255 255 255);
     --row-alternate: rgb(245 245 245);
     --text-primary: rgb(20 20 20);
     --text-heading-1: rgb(120 120 120);
@@ -16,13 +14,13 @@
     --link: rgb(40 95 145);
     --divider: rgb(0 0 0 / 18%);
     --heart: rgb(230 64 94);
+    --icon: rgb(32 36 42);
     --chart-weight: rgb(30 74 130);
     --chart-systolic: rgb(230 0 0);
     --chart-diastolic: rgb(45 100 230);
     --chart-grid: rgb(0 0 0 / 12%);
     --section-gap: 0.625rem;
     --phone-width: 340px;
-    --phone-height: 660px;
 }
 
 * {
@@ -86,7 +84,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0.1em;
-    color: #20242a;
+    color: var(--icon);
     font-family: Corbel, sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -109,7 +107,7 @@ body {
     z-index: 10;
     height: 4rem;
     border-bottom: 1px solid var(--divider);
-    background: var(--phone-screen);
+    background: var(--app-background);
 }
 
 .app-header .app-wordmark {
@@ -155,7 +153,7 @@ body {
     column-gap: 0.5rem;
     margin: 0;
     padding: 0;
-    background: rgb(255 255 255);
+    background: var(--app-background);
 }
 
 .section-label {
@@ -176,7 +174,7 @@ body {
     margin: 0;
     padding: 0.375rem 1rem;
     border-top: 1px solid var(--divider);
-    background: var(--surface);
+    background: var(--app-background);
 }
 
 .measurement-details--averaged {
@@ -381,7 +379,7 @@ body {
 .chart-canvas-wrap {
     position: relative;
     height: 9.375rem;
-    background: var(--surface);
+    background: var(--app-background);
 }
 
 .phone-frame {
@@ -401,7 +399,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     border-radius: 29px;
-    background: var(--phone-screen);
+    background: var(--app-background);
 }
 
 .menu-button {
@@ -416,7 +414,7 @@ body {
     border: 0;
     border-radius: 50%;
     background: transparent;
-    color: #20242a;
+    color: var(--icon);
     cursor: pointer;
     font-size: 1.375rem;
     place-items: center;
@@ -754,7 +752,7 @@ body {
     padding: 0.75rem;
     border: 1px solid #e1e4e8;
     border-radius: 12px;
-    background: var(--surface);
+    background: var(--app-background);
 }
 
 .color-swatch {
@@ -766,7 +764,6 @@ body {
 }
 
 .color-swatch--background { background: var(--app-background); }
-.color-swatch--surface { background: var(--surface); }
 .color-swatch--row-alternate { background: var(--row-alternate); }
 .color-swatch--normal { background: var(--text-primary); }
 .color-swatch--heading-1 { background: var(--text-heading-1); }
@@ -777,6 +774,7 @@ body {
 .color-swatch--link { background: var(--link); }
 .color-swatch--divider { background: var(--divider); }
 .color-swatch--heart { background: var(--heart); }
+.color-swatch--icon { background: var(--icon); }
 .color-swatch--chart-weight { background: var(--chart-weight); }
 .color-swatch--chart-systolic { background: var(--chart-systolic); }
 .color-swatch--chart-diastolic { background: var(--chart-diastolic); }

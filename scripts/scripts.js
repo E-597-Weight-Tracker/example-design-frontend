@@ -3,7 +3,7 @@ import "chartjs-adapter-date-fns";
 
 const theme = getComputedStyle(document.documentElement);
 const colors = Object.fromEntries(
-    ["text-primary", "surface", "chart-weight", "chart-systolic", "chart-diastolic", "chart-grid"]
+    ["text-primary", "app-background", "chart-weight", "chart-systolic", "chart-diastolic", "chart-grid"]
         .map((name) => [name, theme.getPropertyValue(`--${name}`).trim()])
 );
 
@@ -195,7 +195,7 @@ const valueLabels = {
                 const centerX = point.x + (placeLeft ? -(textWidth / 2 + 9) : textWidth / 2 + 9);
                 const centerY = point.y + (pointIndex % 2 === 0 ? -7 : 7);
 
-                ctx.fillStyle = colors.surface;
+                ctx.fillStyle = colors["app-background"];
                 ctx.fillRect(centerX - textWidth / 2 - 3, centerY - 8, textWidth + 6, 16);
                 ctx.strokeStyle = colors["chart-grid"];
                 ctx.strokeRect(centerX - textWidth / 2 - 3, centerY - 8, textWidth + 6, 16);
@@ -270,7 +270,7 @@ const weightChart = new Chart(document.querySelector("#weight-chart"), {
             pointHoverRadius: 8,
             pointBorderWidth: 3,
             pointBorderColor: colors["chart-weight"],
-            pointBackgroundColor: colors.surface,
+            pointBackgroundColor: colors["app-background"],
             tension: 0.2
         }]
     },
@@ -543,7 +543,7 @@ if (noRecentRoot) {
                 pointHoverRadius: 8,
                 pointBorderWidth: 3,
                 pointBorderColor: colors["chart-weight"],
-                pointBackgroundColor: colors.surface,
+                pointBackgroundColor: colors["app-background"],
                 tension: 0.2
             }]
         },
@@ -802,7 +802,7 @@ const setupPopulatedPrototype = (root, sources) => {
                 pointHoverRadius: 8,
                 pointBorderWidth: 3,
                 pointBorderColor: colors["chart-weight"],
-                pointBackgroundColor: colors.surface,
+                pointBackgroundColor: colors["app-background"],
                 tension: 0.2
             }]
         },
