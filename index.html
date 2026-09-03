@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="scripts/scripts.js"></script>
+</head>
+<body>
+    <main class="prototype-page">
+        <section class="working-area" aria-label="Working prototype">
+            <figure class="phone-example">
+                <div class="phone-frame">
+                    <div class="phone-screen" id="prototype">
+                        <header class="app-header">
+                            <div class="app-wordmark">PREVIARA</div>
+                            <button class="menu-button" type="button" aria-label="Open menu">
+                                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                            </button>
+                        </header>
+                        <div class="app-content">
+                            <section class="profile-name">
+                                <p class="profile-welcome smaller-normal">Measurements for</p>
+                                <h3 class="profile-name-heading">Jane DorthyExample</h3>
+                                <time class="prototype-date" datetime="2026-05-08">May 8, 2026</time>
+                            </section>
+                            <div class="view-actions" role="group" aria-label="Measurement display options">
+                                <button class="view-action is-active" type="button" data-view="table" aria-pressed="true">Table</button>
+                                <button class="view-action" type="button" data-view="graph" aria-pressed="false">Graph</button>
+                            </div>
+                            <div class="chart-range-actions" role="group" aria-label="Measurement time range">
+                                <button class="chart-range-action is-active" type="button" data-range="4d" aria-pressed="true">4 Days</button>
+                                <button class="chart-range-action" type="button" data-range="1w" aria-pressed="false">1 Week</button>
+                                <button class="chart-range-action" type="button" data-range="2m" aria-pressed="false">2 Months</button>
+                            </div>
+                            <p class="aggregation-note" aria-live="polite" hidden></p>
+        
+                            <section class="measurement-section">
+                                <h2 class="section-label">Latest Weight</h2>
+                                <p class="measurement-recency normal-text"><strong>27</strong> <span class="smaller-normal">hours ago</span></p>
+                                <div class="measurement-table-rows" data-measurement-table="weight">
+                                <div class="measurement-details">
+                                    <div class="measurement-detail">
+                                        <time class="measurement-date" datetime="2026-05-07">
+                                            <span class="normal-text">May</span>
+                                            <span class="measurement-primary">7</span>
+                                        </time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <time class="measurement-time normal-text" datetime="2026-05-07T16:25">4:25&nbsp;PM</time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <span class="measurement-primary">142.0</span>
+                                    </div>
+                                </div>
+                                <div class="measurement-details">
+                                    <div class="measurement-detail">
+                                        <time class="measurement-date" datetime="2026-05-06">
+                                            <span class="normal-text">May</span>
+                                            <span class="measurement-primary">6</span>
+                                        </time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <time class="measurement-time normal-text" datetime="2026-05-06T08:10">8:10&nbsp;AM</time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <span class="measurement-primary">142.3</span>
+                                    </div>
+                                </div>
+                                <div class="measurement-details">
+                                    <div class="measurement-detail">
+                                        <time class="measurement-date" datetime="2026-05-05">
+                                            <span class="normal-text">May</span>
+                                            <span class="measurement-primary">5</span>
+                                        </time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <time class="measurement-time normal-text" datetime="2026-05-05T07:30">7:30&nbsp;AM</time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <span class="measurement-primary">142.6</span>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="measurement-chart" data-measurement-chart="weight" hidden>
+                                    <div class="chart-canvas-wrap">
+                                        <canvas id="weight-chart" role="img" aria-label="Line chart of weight readings over time"></canvas>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="measurement-section">
+                                <h2 class="section-label">Latest Blood Pressure</h2>
+                                <p class="measurement-recency normal-text"><strong>15</strong> <span class="smaller-normal">hours ago</span></p>
+                                <div class="measurement-table-rows" data-measurement-table="blood-pressure">
+                                <div class="measurement-details">
+                                    <div class="measurement-detail">
+                                        <time class="measurement-date" datetime="2026-05-08">
+                                            <span class="normal-text">May</span>
+                                            <span class="measurement-primary">8</span>
+                                        </time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <time class="measurement-time normal-text" datetime="2026-05-08T08:15">8:15&nbsp;AM</time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <div class="blood-pressure-reading">
+                                            <span class="blood-pressure-value"><span class="measurement-primary">140</span></span>
+                                            <span class="blood-pressure-separator" aria-hidden="true"></span>
+                                            <span class="blood-pressure-value"><span class="measurement-primary">96</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="measurement-details">
+                                    <div class="measurement-detail">
+                                        <time class="measurement-date" datetime="2026-05-07">
+                                            <span class="normal-text">May</span>
+                                            <span class="measurement-primary">7</span>
+                                        </time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <time class="measurement-time normal-text" datetime="2026-05-07T16:25">4:25&nbsp;PM</time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <div class="blood-pressure-reading">
+                                            <span class="blood-pressure-value"><span class="measurement-primary">120</span></span>
+                                            <span class="blood-pressure-separator" aria-hidden="true"></span>
+                                            <span class="blood-pressure-value"><span class="measurement-primary">76</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="measurement-details">
+                                    <div class="measurement-detail">
+                                        <time class="measurement-date" datetime="2026-05-06">
+                                            <span class="normal-text">May</span>
+                                            <span class="measurement-primary">6</span>
+                                        </time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <time class="measurement-time normal-text" datetime="2026-05-06T19:20">7:20&nbsp;PM</time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <div class="blood-pressure-reading">
+                                            <span class="blood-pressure-value"><span class="measurement-primary">130</span></span>
+                                            <span class="blood-pressure-separator" aria-hidden="true"></span>
+                                            <span class="blood-pressure-value"><span class="measurement-primary">81</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="measurement-details">
+                                    <div class="measurement-detail">
+                                        <time class="measurement-date" datetime="2026-05-06">
+                                            <span class="normal-text">May</span>
+                                            <span class="measurement-primary">6</span>
+                                        </time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <time class="measurement-time normal-text" datetime="2026-05-06T08:10">8:10&nbsp;AM</time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <div class="blood-pressure-reading">
+                                            <span class="blood-pressure-value"><span class="measurement-primary">125</span></span>
+                                            <span class="blood-pressure-separator" aria-hidden="true"></span>
+                                            <span class="blood-pressure-value"><span class="measurement-primary">79</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="measurement-details">
+                                    <div class="measurement-detail">
+                                        <time class="measurement-date" datetime="2026-05-05">
+                                            <span class="normal-text">May</span>
+                                            <span class="measurement-primary">5</span>
+                                        </time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <time class="measurement-time normal-text" datetime="2026-05-05T18:45">6:45&nbsp;PM</time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <div class="blood-pressure-reading">
+                                            <span class="blood-pressure-value"><span class="measurement-primary">128</span></span>
+                                            <span class="blood-pressure-separator" aria-hidden="true"></span>
+                                            <span class="blood-pressure-value"><span class="measurement-primary">82</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="measurement-details">
+                                    <div class="measurement-detail">
+                                        <time class="measurement-date" datetime="2026-05-05">
+                                            <span class="normal-text">May</span>
+                                            <span class="measurement-primary">5</span>
+                                        </time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <time class="measurement-time normal-text" datetime="2026-05-05T07:30">7:30&nbsp;AM</time>
+                                    </div>
+                                    <div class="measurement-detail">
+                                        <div class="blood-pressure-reading">
+                                            <span class="blood-pressure-value"><span class="measurement-primary">132</span></span>
+                                            <span class="blood-pressure-separator" aria-hidden="true"></span>
+                                            <span class="blood-pressure-value"><span class="measurement-primary">84</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="measurement-chart" data-measurement-chart="blood-pressure" hidden>
+                                    <div class="chart-canvas-wrap">
+                                        <canvas id="blood-pressure-chart" role="img" aria-label="Chart of systolic and diastolic blood pressure readings over time"></canvas>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <figcaption>
+                    <span>Working prototype</span>
+                    <small>320 × 640 px</small>
+                </figcaption>
+            </figure>
+        </section>
+
+        <section class="state-gallery" aria-label="Prototype data states">
+            <figure class="phone-example phone-example--static">
+                <div class="phone-frame phone-frame--static">
+                    <div class="phone-screen" data-prototype="no-recent">
+                        <header class="app-header">
+                            <div class="app-wordmark">PREVIARA</div>
+                            <span class="menu-button" aria-hidden="true"><i class="fa-solid fa-bars"></i></span>
+                        </header>
+                        <div class="app-content">
+                            <section class="profile-name">
+                                <p class="profile-welcome smaller-normal">Welcome</p>
+                                <h3 class="profile-name-heading">Jane DorthyExample</h3>
+                                <time class="prototype-date" datetime="2026-05-08">May 8, 2026</time>
+                            </section>
+                            <div class="view-actions" role="group" aria-label="Measurement display options">
+                                <button class="view-action is-active" type="button" data-view="table" aria-pressed="true">Table</button>
+                                <button class="view-action" type="button" data-view="graph" aria-pressed="false">Graph</button>
+                            </div>
+                            <div class="chart-range-actions" role="group" aria-label="Measurement time range">
+                                <button class="chart-range-action is-active" type="button" data-range="4d" aria-pressed="true">4 Days</button>
+                                <button class="chart-range-action" type="button" data-range="1w" aria-pressed="false">1 Week</button>
+                                <button class="chart-range-action" type="button" data-range="2m" aria-pressed="false">2 Months</button>
+                            </div>
+                            <p class="aggregation-note" aria-live="polite" hidden></p>
+                            <section class="measurement-section">
+                                <h2 class="section-label">Latest Weight</h2>
+                                <p class="measurement-recency normal-text"><strong>14</strong> <span class="smaller-normal">Days ago</span></p>
+                                <div class="measurement-table-rows" data-measurement-table="weight">
+                                    <p class="no-measurements-message">No measurements to report</p>
+                                </div>
+                                <div class="measurement-chart" data-measurement-chart="weight" hidden>
+                                    <div class="chart-canvas-wrap"><canvas data-chart="weight" role="img" aria-label="Weight readings over time"></canvas></div>
+                                </div>
+                            </section>
+                            <section class="measurement-section">
+                                <h2 class="section-label">Latest Blood Pressure</h2>
+                                <p class="measurement-recency normal-text"><strong>14</strong> <span class="smaller-normal">Days ago</span></p>
+                                <div class="measurement-table-rows" data-measurement-table="blood-pressure">
+                                    <p class="no-measurements-message">No measurements to report</p>
+                                </div>
+                                <div class="measurement-chart" data-measurement-chart="blood-pressure" hidden>
+                                    <div class="chart-canvas-wrap"><canvas data-chart="blood-pressure" role="img" aria-label="Blood Pressure readings over time"></canvas></div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <figcaption>
+                    <span>No recent measurements</span>
+                    <small>160 × 320 px</small>
+                </figcaption>
+            </figure>
+            <figure class="phone-example phone-example--static">
+                <div class="phone-frame phone-frame--static">
+                    <div class="phone-screen" data-prototype="extensive">
+                        <header class="app-header">
+                            <div class="app-wordmark">PREVIARA</div>
+                            <span class="menu-button" aria-hidden="true"><i class="fa-solid fa-bars"></i></span>
+                        </header>
+                        <div class="app-content">
+                            <section class="profile-name">
+                                <p class="profile-welcome smaller-normal">Welcome</p>
+                                <h3 class="profile-name-heading">Jane DorthyExample -- Extra long name for testing purposes</h3>
+                                <time class="prototype-date" datetime="2026-05-08">May 8, 2026</time>
+                            </section>
+                            <div class="view-actions" role="group" aria-label="Measurement display options">
+                                <button class="view-action is-active" type="button" data-view="table" aria-pressed="true">Table</button>
+                                <button class="view-action" type="button" data-view="graph" aria-pressed="false">Graph</button>
+                            </div>
+                            <div class="chart-range-actions" role="group" aria-label="Measurement time range">
+                                <button class="chart-range-action is-active" type="button" data-range="4d" aria-pressed="true">4 Days</button>
+                                <button class="chart-range-action" type="button" data-range="1w" aria-pressed="false">1 Week</button>
+                                <button class="chart-range-action" type="button" data-range="2m" aria-pressed="false">2 Months</button>
+                            </div>
+                            <p class="aggregation-note" aria-live="polite" hidden></p>
+                            <section class="measurement-section">
+                                <h2 class="section-label">Latest Weight</h2>
+                                <p class="measurement-recency normal-text"><strong>1</strong> <span class="smaller-normal">minute ago</span></p>
+                                <div class="measurement-table-rows" data-measurement-table="weight"><div class="measurement-details">
+                                    <div class="measurement-detail"><time class="measurement-date" datetime="2026-05-09"><span class="normal-text">May</span><span class="measurement-primary">9</span></time></div>
+                                    <div class="measurement-detail"><time class="measurement-time normal-text" datetime="2026-05-09T16:25">4:25&nbsp;PM</time></div>
+                                    <div class="measurement-detail"><span class="measurement-primary">142</span></div>
+                                </div></div>
+                                <div class="measurement-chart" data-measurement-chart="weight" hidden><div class="chart-canvas-wrap"><canvas data-chart="weight" role="img" aria-label="Weight readings over time"></canvas></div></div>
+                            </section>
+                            <section class="measurement-section">
+                                <h2 class="section-label">Latest Blood Pressure</h2>
+                                <p class="measurement-recency normal-text"><strong>55</strong> <span class="smaller-normal">minutes ago</span></p>
+                                <div class="measurement-table-rows" data-measurement-table="blood-pressure"><div class="measurement-details">
+                                    <div class="measurement-detail"><time class="measurement-date" datetime="2026-05-09"><span class="normal-text">May</span><span class="measurement-primary">9</span></time></div>
+                                    <div class="measurement-detail"><time class="measurement-time normal-text" datetime="2026-05-09T16:25">4:25&nbsp;PM</time></div>
+                                    <div class="measurement-detail">
+                                        <div class="blood-pressure-reading">
+                                            <span class="blood-pressure-value"><span class="measurement-primary">120</span></span>
+                                            <span class="blood-pressure-separator" aria-hidden="true"></span>
+                                            <span class="blood-pressure-value"><span class="measurement-primary">80</span></span>
+                                        </div>
+                                    </div>
+                                </div></div>
+                                <div class="measurement-chart" data-measurement-chart="blood-pressure" hidden><div class="chart-canvas-wrap"><canvas data-chart="blood-pressure" role="img" aria-label="Blood Pressure readings over time"></canvas></div></div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <figcaption>
+                    <span>Extensive data</span>
+                    <small>160 × 320 px</small>
+                </figcaption>
+            </figure>
+        </section>
+
+        <section class="assets-section" aria-label="Assets and brainstorming">
+            <div class="asset-group">
+                <h2>Company name</h2>
+                <div class="app-wordmark">PREVIARA</div>
+                <dl class="asset-details">
+                    <div>
+                        <dt>Font</dt>
+                        <dd>Corbel</dd>
+                    </div>
+                    <div>
+                        <dt>Fallback</dt>
+                        <dd>sans-serif</dd>
+                    </div>
+                    <div>
+                        <dt>Weight</dt>
+                        <dd>400 · Regular</dd>
+                    </div>
+                    <div>
+                        <dt>Case</dt>
+                        <dd>Uppercase</dd>
+                    </div>
+                    <div>
+                        <dt>Preview size</dt>
+                        <dd>24px</dd>
+                    </div>
+                    <div>
+                        <dt>Letter spacing</dt>
+                        <dd>0.34em</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="asset-group" id="typography">
+                <h2>Typography</h2>
+                <p class="asset-description">Segoe UI is the primary interface typeface. All fallbacks remain sans serif.</p>
+                <div class="typography-table-wrap">
+                    <table class="typography-table">
+                        <thead>
+                            <tr>
+                                <th>Style</th>
+                                <th>Example</th>
+                                <th>Settings</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>H1</th>
+                                <td class="type-sample"><h1>Header 1</h1></td>
+                                <td><code>Segoe UI · 34px · 600 · 1.2 · rgb(120, 120, 120)</code></td>
+                            </tr>
+                            <tr>
+                                <th>H2</th>
+                                <td class="type-sample"><h2>Header 2</h2></td>
+                                <td><code>Segoe UI · 28px · 600 · 1.25 · rgb(100, 100, 100)</code></td>
+                            </tr>
+                            <tr>
+                                <th>H3</th>
+                                <td class="type-sample"><h3>Header 3</h3></td>
+                                <td><code>Segoe UI · 24px · 600 · 1.3 · rgb(80, 80, 80)</code></td>
+                            </tr>
+                            <tr>
+                                <th>H4</th>
+                                <td class="type-sample"><h4>Header 4</h4></td>
+                                <td><code>Segoe UI · 22px · 600 · 1.4 · rgb(60, 60, 60)</code></td>
+                            </tr>
+                            <tr>
+                                <th>Normal</th>
+                                <td class="type-sample type-body">This is Normal</td>
+                                <td><code>Segoe UI · 18px · 400 · 1.6 · rgb(20, 20, 20)</code></td>
+                            </tr>
+                            <tr>
+                                <th>Normal Large</th>
+                                <td class="type-sample type-normal-large">This is Normal Large</td>
+                                <td><code>Segoe UI · 32px · 600 · 1.2 · rgb(20, 20, 20)</code></td>
+                            </tr>
+                            <tr>
+                                <th>Smaller Normal</th>
+                                <td class="type-sample type-small-normal">This is Smaller Normal</td>
+                                <td><code>Segoe UI · 16px · 400 · 1.5 · rgb(20, 20, 20)</code></td>
+                            </tr>
+                            <tr>
+                                <th>Italics</th>
+                                <td class="type-sample type-body"><em>This is Italics</em></td>
+                                <td><code>Segoe UI · 18px · 400 italic · 1.6 · rgb(20, 20, 20)</code></td>
+                            </tr>
+                            <tr>
+                                <th>Strong</th>
+                                <td class="type-sample type-body"><strong>This is Strong</strong></td>
+                                <td><code>Segoe UI · 18px · 700 · 1.6 · rgb(20, 20, 20)</code></td>
+                            </tr>
+                            <tr>
+                                <th>Link</th>
+                                <td class="type-sample type-body"><a href="#typography">This is Link</a></td>
+                                <td><code>Segoe UI · 18px · 600 · underlined · rgb(40, 95, 145)</code></td>
+                            </tr>
+                            <tr>
+                                <th>Quote</th>
+                                <td class="type-sample"><blockquote>This is Quote</blockquote></td>
+                                <td><code>Segoe UI · 18px · 400 italic · 1.5 · rgb(60, 60, 60)</code></td>
+                            </tr>
+                            <tr>
+                                <th>Helper text</th>
+                                <td class="type-sample type-helper">This is Helper text</td>
+                                <td><code>Segoe UI · 18px · 400 · 1.5 · rgb(98, 106, 115)</code></td>
+                            </tr>
+                            <tr>
+                                <th>Label</th>
+                                <td class="type-sample"><span class="type-label">This is Label</span></td>
+                                <td><code>Segoe UI · 16px · 600 · 1.4 · rgb(100, 100, 100)</code></td>
+                            </tr>
+                            <tr>
+                                <th>Button</th>
+                                <td class="type-sample"><span class="type-button">This is Button</span></td>
+                                <td><code>Segoe UI · 18px · 600 · 1.2 · rgb(20, 20, 20)</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="asset-group" id="colors">
+                <h2>Colors</h2>
+                <p class="asset-description">Current interface palette. Transparency is listed where it is used.</p>
+                <div class="color-grid">
+                    <figure class="color-option">
+                        <span class="color-swatch color-swatch--background" aria-hidden="true"></span>
+                        <figcaption><strong>App background</strong><code>rgb(255, 255, 255) · 100%</code></figcaption>
+                    </figure>
+                    <figure class="color-option">
+                        <span class="color-swatch color-swatch--surface" aria-hidden="true"></span>
+                        <figcaption><strong>Surface</strong><code>rgb(255, 255, 255) · 100%</code></figcaption>
+                    </figure>
+                    <figure class="color-option">
+                        <span class="color-swatch color-swatch--row-alternate" aria-hidden="true"></span>
+                        <figcaption><strong>Alternate table row</strong><code>rgb(245, 245, 245) · 100%</code></figcaption>
+                    </figure>
+                    <figure class="color-option">
+                        <span class="color-swatch color-swatch--normal" aria-hidden="true"></span>
+                        <figcaption><strong>Normal text</strong><code>rgb(20, 20, 20) · 100%</code></figcaption>
+                    </figure>
+                    <figure class="color-option">
+                        <span class="color-swatch color-swatch--heading-1" aria-hidden="true"></span>
+                        <figcaption><strong>H1 text</strong><code>rgb(120, 120, 120) · 100%</code></figcaption>
+                    </figure>
+                    <figure class="color-option">
+                        <span class="color-swatch color-swatch--heading-2" aria-hidden="true"></span>
+                        <figcaption><strong>H2 text</strong><code>rgb(100, 100, 100) · 100%</code></figcaption>
+                    </figure>
+                    <figure class="color-option">
+                        <span class="color-swatch color-swatch--heading-3" aria-hidden="true"></span>
+                        <figcaption><strong>H3 text</strong><code>rgb(80, 80, 80) · 100%</code></figcaption>
+                    </figure>
+                    <figure class="color-option">
+                        <span class="color-swatch color-swatch--heading-4" aria-hidden="true"></span>
+                        <figcaption><strong>H4 text</strong><code>rgb(60, 60, 60) · 100%</code></figcaption>
+                    </figure>
+                    <figure class="color-option">
+                        <span class="color-swatch color-swatch--secondary" aria-hidden="true"></span>
+                        <figcaption><strong>Secondary text</strong><code>rgb(98, 106, 115) · 100%</code></figcaption>
+                    </figure>
+                    <figure class="color-option">
+                        <span class="color-swatch color-swatch--link" aria-hidden="true"></span>
+                        <figcaption><strong>Link</strong><code>rgb(40, 95, 145) · 100%</code></figcaption>
+                    </figure>
+                    <figure class="color-option">
+                        <span class="color-swatch color-swatch--divider" aria-hidden="true"></span>
+                        <figcaption><strong>Divider</strong><code>rgb(0, 0, 0) · 18%</code></figcaption>
+                    </figure>
+                    <figure class="color-option">
+                        <span class="color-swatch color-swatch--heart" aria-hidden="true"></span>
+                        <figcaption><strong>Heart</strong><code>rgb(230, 64, 94) · 100%</code></figcaption>
+                    </figure>
+                    <figure class="color-option">
+                        <span class="color-swatch color-swatch--chart-weight" aria-hidden="true"></span>
+                        <figcaption><strong>Weight chart</strong><code>rgb(30, 74, 130) · 100%</code></figcaption>
+                    </figure>
+                    <figure class="color-option">
+                        <span class="color-swatch color-swatch--chart-systolic" aria-hidden="true"></span>
+                        <figcaption><strong>Systolic marker</strong><code>rgb(230, 0, 0) · 100%</code></figcaption>
+                    </figure>
+                    <figure class="color-option">
+                        <span class="color-swatch color-swatch--chart-diastolic" aria-hidden="true"></span>
+                        <figcaption><strong>Diastolic marker</strong><code>rgb(45, 100, 230) · 100%</code></figcaption>
+                    </figure>
+                    <figure class="color-option">
+                        <span class="color-swatch color-swatch--chart-grid" aria-hidden="true"></span>
+                        <figcaption><strong>Chart grid</strong><code>rgb(0, 0, 0) · 12%</code></figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="asset-group">
+                <h2>Logos</h2>
+                <p class="asset-description">This logo combines two free Font Awesome icons—the Heart and Hand Holding Droplet—into a reusable SVG.</p>
+                <div class="logo-grid">
+                    <figure class="logo-option">
+                        <img src="assets/logos/previara-heart-in-hand.svg" alt="Red heart held by a charcoal hand">
+                        <figcaption>Combined SVG</figcaption>
+                    </figure>
+
+                    <figure class="logo-option">
+                        <div class="fa-logo-stack" role="img" aria-label="Layered Font Awesome hand holding a red heart">
+                            <img class="fa-logo-heart" src="node_modules/@fortawesome/fontawesome-free/svgs/solid/heart.svg" alt="">
+                            <img class="fa-logo-base" src="node_modules/@fortawesome/fontawesome-free/svgs/solid/hand-holding-droplet.svg" alt="">
+                        </div>
+                        <figcaption>Layered Font Awesome SVGs</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="asset-group">
+                <h2>Font Awesome icons</h2>
+                <div class="icon-grid">
+                    <figure class="icon-option">
+                        <i class="fa-solid fa-gear" aria-hidden="true"></i>
+                        <figcaption>
+                            <span>Gear</span>
+                            <code>fa-solid fa-gear</code>
+                            <a href="https://fontawesome.com/icons/classic/solid/gear" target="_blank" rel="noopener noreferrer">link</a>
+                        </figcaption>
+                    </figure>
+                    <figure class="icon-option">
+                        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                        <figcaption>
+                            <span>Bars</span>
+                            <code>fa-solid fa-bars</code>
+                            <a href="https://fontawesome.com/icons/classic/solid/bars" target="_blank" rel="noopener noreferrer">link</a>
+                        </figcaption>
+                    </figure>
+                    <figure class="icon-option">
+                        <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                        <figcaption>
+                            <span>Heart</span>
+                            <code>fa-solid fa-heart</code>
+                            <a href="https://fontawesome.com/icons/classic/solid/heart" target="_blank" rel="noopener noreferrer">link</a>
+                            <span class="icon-note">Sponsored on Font-Awesome by Harvard Medical School</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="icon-option">
+                        <i class="fa-solid fa-hand-holding-droplet" aria-hidden="true"></i>
+                        <figcaption>
+                            <span>Hand holding droplet</span>
+                            <code>fa-solid fa-hand-holding-droplet</code>
+                            <a href="https://fontawesome.com/icons/classic/solid/hand-holding-droplet" target="_blank" rel="noopener noreferrer">link</a>
+                            <span class="icon-note">Sponsored on Font-Awesome by the us-Sunnah Foundation</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
