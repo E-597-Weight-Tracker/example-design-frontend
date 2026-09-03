@@ -12,8 +12,8 @@
     <main class="prototype-page">
         <section class="working-area" aria-label="Working prototype">
             <figure class="phone-example">
-                <div class="phone-frame">
-                    <div class="phone-screen theme-white" id="prototype">
+                <div class="phone-frame theme-white" id="prototype">
+                    <div class="phone-screen">
                         <header class="app-header">
                             <div class="app-wordmark">PREVIARA</div>
                             <button class="menu-button" type="button" aria-label="Open settings">
@@ -184,24 +184,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="measurement-details">
-                                    <div class="measurement-detail">
-                                        <time class="measurement-date" datetime="2026-05-05">
-                                            <span class="normal-text">May</span>
-                                            <span class="measurement-primary">5</span>
-                                        </time>
-                                    </div>
-                                    <div class="measurement-detail">
-                                        <time class="measurement-time normal-text" datetime="2026-05-05T07:30">7:30&nbsp;AM</time>
-                                    </div>
-                                    <div class="measurement-detail">
-                                        <div class="blood-pressure-reading">
-                                            <span class="blood-pressure-value"><span class="measurement-primary">132</span></span>
-                                            <span class="blood-pressure-separator" aria-hidden="true"></span>
-                                            <span class="blood-pressure-value"><span class="measurement-primary">84</span></span>
-                                        </div>
-                                    </div>
-                                </div>
                                 </div>
                                 <div class="measurement-chart" data-measurement-chart="blood-pressure" hidden>
                                     <div class="chart-canvas-wrap">
@@ -211,6 +193,74 @@
                             </section>
                         </div>
                     </div>
+                    <button class="journal-backdrop" type="button" aria-label="Close journal" tabindex="-1"></button>
+                    <section class="journal-panel">
+                        <button class="journal-launch-button" type="button" aria-controls="journal-sheet" aria-expanded="false">
+                            Open Journal
+                        </button>
+                        <div class="journal-sheet" id="journal-sheet" role="dialog" aria-modal="true" aria-label="Journal calendar" aria-hidden="true">
+                            <div class="journal-month-heading">
+                                <button class="journal-month-button" type="button" aria-label="Previous month">
+                                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                </button>
+                                <h2>May 2026</h2>
+                                <button class="journal-month-button" type="button" aria-label="Next month">
+                                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="journal-weekdays" aria-hidden="true">
+                                <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                            </div>
+                            <ol class="journal-calendar" aria-label="May 2026 journal entries">
+                                <li class="journal-day--blank" aria-hidden="true"></li>
+                                <li class="journal-day--blank" aria-hidden="true"></li>
+                                <li class="journal-day--blank" aria-hidden="true"></li>
+                                <li class="journal-day--blank" aria-hidden="true"></li>
+                                <li class="journal-day--blank" aria-hidden="true"></li>
+                                <li><button class="journal-day journal-day--entry" type="button" aria-label="May 1, journal entry"><span>1</span><i class="journal-dot" aria-hidden="true"></i></button></li>
+                                <li><button class="journal-day journal-day--entry" type="button" aria-label="May 2, journal entry"><span>2</span><i class="journal-dot" aria-hidden="true"></i></button></li>
+                                <li><button class="journal-day journal-day--entry" type="button" aria-label="May 3, journal entry"><span>3</span><i class="journal-dot" aria-hidden="true"></i></button></li>
+                                <li><button class="journal-day" type="button" aria-label="May 4, add journal entry"><span>4</span><i class="journal-dot" aria-hidden="true"></i></button></li>
+                                <li><button class="journal-day journal-day--entry" type="button" aria-label="May 5, journal entry"><span>5</span><i class="journal-dot" aria-hidden="true"></i></button></li>
+                                <li><button class="journal-day journal-day--entry" type="button" aria-label="May 6, journal entry"><span>6</span><i class="journal-dot" aria-hidden="true"></i></button></li>
+                                <li><button class="journal-day journal-day--entry" type="button" aria-label="May 7, journal entry"><span>7</span><i class="journal-dot" aria-hidden="true"></i></button></li>
+                                <li><button class="journal-day journal-day--today" type="button" aria-label="May 8, today, add journal entry"><span>8</span><i class="journal-dot" aria-hidden="true"></i></button></li>
+                                <li><span class="journal-day"><span>9</span></span></li>
+                                <li><span class="journal-day"><span>10</span></span></li>
+                                <li><span class="journal-day"><span>11</span></span></li>
+                                <li><span class="journal-day"><span>12</span></span></li>
+                                <li><span class="journal-day"><span>13</span></span></li>
+                                <li><span class="journal-day"><span>14</span></span></li>
+                                <li><span class="journal-day"><span>15</span></span></li>
+                                <li><span class="journal-day"><span>16</span></span></li>
+                                <li><span class="journal-day"><span>17</span></span></li>
+                                <li><span class="journal-day"><span>18</span></span></li>
+                                <li><span class="journal-day"><span>19</span></span></li>
+                                <li><span class="journal-day"><span>20</span></span></li>
+                                <li><span class="journal-day"><span>21</span></span></li>
+                                <li><span class="journal-day"><span>22</span></span></li>
+                                <li><span class="journal-day"><span>23</span></span></li>
+                                <li><span class="journal-day"><span>24</span></span></li>
+                                <li><span class="journal-day"><span>25</span></span></li>
+                                <li><span class="journal-day"><span>26</span></span></li>
+                                <li><span class="journal-day"><span>27</span></span></li>
+                                <li><span class="journal-day"><span>28</span></span></li>
+                                <li><span class="journal-day"><span>29</span></span></li>
+                                <li><span class="journal-day"><span>30</span></span></li>
+                                <li><span class="journal-day"><span>31</span></span></li>
+                            </ol>
+                        </div>
+                    </section>
+                    <button class="journal-entry-backdrop" type="button" aria-label="Close journal entry" tabindex="-1" hidden></button>
+                    <section class="journal-entry-popover" role="dialog" aria-modal="true" aria-labelledby="journal-entry-date" aria-hidden="true" hidden>
+                        <button class="journal-entry-close" type="button" aria-label="Close journal entry">
+                            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                        </button>
+                        <h3 id="journal-entry-date">May 1</h3>
+                        <p class="journal-entry-text"></p>
+                        <textarea class="journal-entry-input" aria-label="Journal entry" rows="5" hidden></textarea>
+                        <button class="journal-entry-action" type="button">Edit</button>
+                    </section>
                 </div>
                 <figcaption>
                     <span>Working prototype</span>
@@ -504,6 +554,10 @@
                         <figcaption><strong>Divider</strong><code>rgb(0, 0, 0) · 18%</code></figcaption>
                     </figure>
                     <figure class="color-option">
+                        <span class="color-swatch color-swatch--overlay" aria-hidden="true"></span>
+                        <figcaption><strong>Overlay backdrop</strong><code>rgb(20, 20, 20) · 18%</code></figcaption>
+                    </figure>
+                    <figure class="color-option">
                         <span class="color-swatch color-swatch--heart" aria-hidden="true"></span>
                         <figcaption><strong>Heart</strong><code>rgb(230, 64, 94) · 100%</code></figcaption>
                     </figure>
@@ -576,6 +630,30 @@
                             <code>fa-solid fa-hand-holding-droplet</code>
                             <a href="https://fontawesome.com/icons/classic/solid/hand-holding-droplet" target="_blank" rel="noopener noreferrer">link</a>
                             <span class="icon-note">Sponsored on Font-Awesome by the us-Sunnah Foundation</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="icon-option">
+                        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                        <figcaption>
+                            <span>Chevron left</span>
+                            <code>fa-solid fa-chevron-left</code>
+                            <a href="https://fontawesome.com/icons/classic/solid/chevron-left" target="_blank" rel="noopener noreferrer">link</a>
+                        </figcaption>
+                    </figure>
+                    <figure class="icon-option">
+                        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                        <figcaption>
+                            <span>Chevron right</span>
+                            <code>fa-solid fa-chevron-right</code>
+                            <a href="https://fontawesome.com/icons/classic/solid/chevron-right" target="_blank" rel="noopener noreferrer">link</a>
+                        </figcaption>
+                    </figure>
+                    <figure class="icon-option">
+                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                        <figcaption>
+                            <span>X mark</span>
+                            <code>fa-solid fa-xmark</code>
+                            <a href="https://fontawesome.com/icons/classic/solid/xmark" target="_blank" rel="noopener noreferrer">link</a>
                         </figcaption>
                     </figure>
                 </div>

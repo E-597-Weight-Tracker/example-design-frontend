@@ -36,7 +36,9 @@ const rawReadings = [
 
 const rawWeightReadings = rawReadings.map(({ time, weight }) => ({ time, weight }));
 const rawBloodPressureReadings = [
-    ...rawReadings.map(({ time, systolic, diastolic }) => ({ time, systolic, diastolic })),
+    ...rawReadings
+        .filter(({ time }) => time !== new Date("2026-05-05T07:30:00").getTime())
+        .map(({ time, systolic, diastolic }) => ({ time, systolic, diastolic })),
     { time: new Date("2026-05-05T18:45:00").getTime(), systolic: 128, diastolic: 82 },
     { time: new Date("2026-05-06T19:20:00").getTime(), systolic: 130, diastolic: 81 },
     { time: new Date("2026-05-08T08:15:00").getTime(), systolic: 140, diastolic: 96 }
@@ -944,4 +946,140 @@ themeActions.forEach((action) => {
             chart.update("none");
         });
     });
+});
+
+const journalSheet = workingPrototype.querySelector("#journal-sheet");
+const journalButton = workingPrototype.querySelector(".journal-launch-button");
+const journalBackdrop = workingPrototype.querySelector(".journal-backdrop");
+const journalEntryBackdrop = workingPrototype.querySelector(".journal-entry-backdrop");
+const journalEntryPopover = workingPrototype.querySelector(".journal-entry-popover");
+const journalEntryClose = workingPrototype.querySelector(".journal-entry-close");
+const journalEntryDate = workingPrototype.querySelector("#journal-entry-date");
+const journalEntryText = workingPrototype.querySelector(".journal-entry-text");
+const journalEntryInput = workingPrototype.querySelector(".journal-entry-input");
+const journalEntryAction = workingPrototype.querySelector(".journal-entry-action");
+const journalDays = workingPrototype.querySelectorAll("button.journal-day");
+const exampleJournalEntry = "Today I felt steady and comfortable. I took my measurements after breakfast and went for a short walk.";
+const journalEntries = new Map(
+    [...journalDays]
+        .filter((day) => day.classList.contains("journal-day--entry"))
+        .map((day) => [Number(day.querySelector("span").textContent), exampleJournalEntry])
+);
+let selectedJournalDay = null;
+
+const closeJournalEntry = () => {
+    journalEntryBackdrop.hidden = true;
+    journalEntryPopover.hidden = true;
+    journalEntryPopover.setAttribute("aria-hidden", "true");
+    journalEntryInput.hidden = true;
+    journalEntryText.hidden = false;
+};
+
+const setJournalOpen = (isOpen) => {
+    if (!isOpen) closeJournalEntry();
+    workingPrototype.classList.toggle("is-journal-open", isOpen);
+    journalSheet.setAttribute("aria-hidden", String(!isOpen));
+    journalButton.setAttribute("aria-expanded", String(isOpen));
+    journalButton.textContent = isOpen ? "Close Journal" : "Open Journal";
+};
+
+journalButton.addEventListener("click", () => {
+    setJournalOpen(!workingPrototype.classList.contains("is-journal-open"));
+});
+
+journalBackdrop.addEventListener("click", () => {
+    setJournalOpen(false);
+    journalButton.focus();
+});
+
+const positionJournalEntry = (day) => {
+    journalEntryPopover.style.visibility = "hidden";
+    journalEntryPopover.hidden = false;
+
+    const frameRect = workingPrototype.getBoundingClientRect();
+    const dayRect = day.getBoundingClientRect();
+    const popoverWidth = journalEntryPopover.offsetWidth;
+    const popoverHeight = journalEntryPopover.offsetHeight;
+    const preferredTop = dayRect.top - frameRect.top - popoverHeight - 12;
+    const top = Math.max(16, Math.min(preferredTop, frameRect.height - popoverHeight - 16));
+    const popoverLeft = (frameRect.width - popoverWidth) / 2;
+    const pointerLeft = Math.max(18, Math.min(
+        dayRect.left - frameRect.left + dayRect.width / 2 - popoverLeft,
+        popoverWidth - 18
+    ));
+
+    journalEntryPopover.style.top = `${top}px`;
+    journalEntryPopover.style.setProperty("--pointer-left", `${pointerLeft}px`);
+    journalEntryPopover.style.visibility = "visible";
+};
+
+const renderJournalEntry = () => {
+    const dayNumber = Number(selectedJournalDay.querySelector("span").textContent);
+    const entry = journalEntries.get(dayNumber);
+
+    journalEntryDate.textContent = `May ${dayNumber}`;
+    journalEntryText.textContent = entry || "No journal entry.";
+    journalEntryText.hidden = false;
+    journalEntryInput.hidden = true;
+    journalEntryAction.textContent = entry ? "Edit" : "Add Entry";
+};
+
+journalDays.forEach((day) => {
+    day.addEventListener("click", () => {
+        selectedJournalDay = day;
+        renderJournalEntry();
+        journalEntryBackdrop.hidden = false;
+        journalEntryPopover.setAttribute("aria-hidden", "false");
+        positionJournalEntry(day);
+        journalEntryClose.focus();
+    });
+});
+
+journalEntryAction.addEventListener("click", () => {
+    const isEditing = !journalEntryInput.hidden;
+    const dayNumber = Number(selectedJournalDay.querySelector("span").textContent);
+
+    if (!isEditing) {
+        journalEntryInput.value = journalEntries.get(dayNumber) || "";
+        journalEntryText.hidden = true;
+        journalEntryInput.hidden = false;
+        journalEntryAction.textContent = "Save";
+        positionJournalEntry(selectedJournalDay);
+        journalEntryInput.focus();
+        return;
+    }
+
+    const entry = journalEntryInput.value.trim();
+    if (entry) {
+        journalEntries.set(dayNumber, entry);
+        selectedJournalDay.classList.add("journal-day--entry");
+        selectedJournalDay.setAttribute("aria-label", `May ${dayNumber}, journal entry`);
+    } else {
+        journalEntries.delete(dayNumber);
+        selectedJournalDay.classList.remove("journal-day--entry");
+        selectedJournalDay.setAttribute("aria-label", `May ${dayNumber}, add journal entry`);
+    }
+    renderJournalEntry();
+    positionJournalEntry(selectedJournalDay);
+});
+
+journalEntryClose.addEventListener("click", () => {
+    closeJournalEntry();
+    selectedJournalDay?.focus();
+});
+
+journalEntryBackdrop.addEventListener("click", () => {
+    closeJournalEntry();
+    selectedJournalDay?.focus();
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    if (!journalEntryPopover.hidden) {
+        closeJournalEntry();
+        selectedJournalDay?.focus();
+    } else if (workingPrototype.classList.contains("is-journal-open")) {
+        setJournalOpen(false);
+        journalButton.focus();
+    }
 });
